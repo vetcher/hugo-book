@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: DOCS INTRO
 ---
 
 # Acerbo datus maxime
@@ -20,7 +20,6 @@ miseram excita suadent es pecudes iam. Concilio _quam_ velatus posset ait quod
 nunc! Fragosis suae dextra geruntur functus vulgata.
 {{< /columns >}}
 
----
 
 ## Tempora nisi nunc
 

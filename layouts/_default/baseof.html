@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+<head>
+    {{ partial "head" . }}
+    {{ partial "custom-head" . }}
+</head>
+<body>
+<input type="checkbox" class="hidden" id="menu-control" />
+<main class="flex justify-center">
+    <aside class="book-menu fixed">
+        {{ partial "menu" . }}
+    </aside>
+
+    <div class="book-page">
+        {{ template "main" . }}
+    </div>
+    {{ partial "toc" . }}
+</main>
+{{- partial "footer" . -}}
+{{ partial "custom-footer" . }}
+</body>
+
+</html>

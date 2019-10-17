@@ -34,6 +34,12 @@ h5 {
   font-weight: $body-font-weight;
 }
 
+hr {
+    height: $padding-1;
+    border: none;
+    background: $gray-200;
+}
+
 a {
   text-decoration: none;
   color: $color-link;

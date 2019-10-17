@@ -2,8 +2,8 @@
 <html lang="{{ .Site.Language.Lang }}">
 
 <head>
-  {{ partial "docs/html-head" . }}
-  {{ partial "docs/inject/head" . }}
+  {{ partial "head" . }}
+  {{ partial "custom-head" . }}
 </head>
 
 <body>
@@ -11,8 +11,7 @@
     <h1>404 Not Found</h1>
   </main>
 
-  {{ partial "docs/inject/body" . }}
-  {{ template "_internal/google_analytics_async.html" . }}
+  {{ partial "custom-footer" . }}
 </body>
 
 </html>
