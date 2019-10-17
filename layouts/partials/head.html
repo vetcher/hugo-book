@@ -21,3 +21,12 @@
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 {{ "-->" | safeHTML }}
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+{{- $vizJS := resources.Get "viz.js" | resources.ExecuteAsTemplate "viz.js" . | resources.Minify | resources.Fingerprint }}
+<script src="{{ $vizJS.RelPermalink }}" integrity="{{ $vizJS.Data.Integrity }}"></script>
+
+{{- $vizRenderJS := resources.Get "viz.render.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $vizRenderJS.RelPermalink }}" integrity="{{ $vizRenderJS.Data.Integrity }}"></script>

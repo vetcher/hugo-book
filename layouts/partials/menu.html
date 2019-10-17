@@ -4,7 +4,7 @@
     {{ partial "search" . }}
     <hr>
     <ul>
-        <li class="{{ if .IsHome }}active{{ end }}"><a href="{{ .Site.BaseURL }}">Home</a></li>
+        <li class="{{ if .IsHome }}active{{ end }} book-section-flat"><a href="{{ .Site.BaseURL }}">Home</a></li>
         {{- if eq .Site.Params.ordersectionsby "title" -}}
             {{- range .Site.Home.Sections.ByTitle -}}
                 {{template "menu" dict "sect" . "currentnode" $currentNode}}
@@ -35,7 +35,7 @@
             {{ if in .Site.Params.menu_exclusion .Section }}
             {{- else -}}
                 {{- safeHTML .Params.head -}}
-                <li class="{{ if .IsAncestor $currentNode }}parent{{ end }}{{ if eq .File.UniqueID $currentNode.File.UniqueID }} active{{ end }}{{ if .Params.alwaysopen }} parent{{ end }}"><a href="{{ .Permalink }}">{{ safeHTML .Params.Pre }}{{ .Title }}{{ safeHTML .Params.Post }}</a>
+                <li class="{{if eq .FirstSection .CurrentSection}}book-section-flat{{end}}{{ if .IsAncestor $currentNode }}parent{{ end }}{{ if eq .File.UniqueID $currentNode.File.UniqueID }} active{{ end }}{{ if .Params.alwaysopen }} parent{{ end }}"><a href="{{ .Permalink }}"{{ if eq $currentNode . }} class="active"{{ end }}>{{ safeHTML .Params.Pre }}{{partial "title" .}}{{ safeHTML .Params.Post }}</a>
                     {{- $numberOfPages := (add (len .Pages) (len .Sections)) -}}
                     {{if ne $numberOfPages 0}}
                         <ul class="{{ if .IsAncestor $currentNode }}sub-menu{{ end }}">
@@ -65,7 +65,7 @@
             {{- end -}}
         {{- else -}}
             {{- if not .Params.Hidden -}}
-                <li class="{{ if eq .File.UniqueID $currentNode.File.UniqueID }}active{{ end }}"><a href="{{ .Permalink }}">{{ safeHTML .Params.Pre }}{{ .Title }}{{ safeHTML .Params.Post }}</a></li>
+                <li class="{{ if eq .File.UniqueID $currentNode.File.UniqueID }}active{{ end }}"><a href="{{ .Permalink }}" {{ if eq $currentNode . }} class="active"{{ end }}>{{ safeHTML .Params.Pre }}{{partial "title" .}}{{ safeHTML .Params.Post }}</a></li>
             {{- end -}}
         {{ end -}}
     {{ end -}}
