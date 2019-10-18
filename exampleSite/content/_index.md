@@ -218,7 +218,7 @@ stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
 
 ## Graphviz
 
-You can drow graphs via graphviz or mermaid.
+You can draw graphs via graphviz or mermaid.
 
 {{< columns >}}
 ### Graphviz

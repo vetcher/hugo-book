@@ -4,12 +4,17 @@
 name = "DocBook"
 license = "MIT"
 licenselink = "https://github.com/vetcher/hugo-book/blob/master/LICENSE"
-description = "Hugo documentation theme as simple as plain book"
-homepage = "https://github.com/alex-shpak/hugo-book"
-tags = ["responsive", "clean", "documentation", "docs", "flexbox", "search", "mobile"]
+description = "Hugo documentation theme as simple as plain book. Extended version"
+homepage = "https://github.com/vetcher/hugo-book"
+tags = ["clean", "documentation", "docs", "flexbox", "search", "mobile"]
 features = []
 min_version = "0.55"
 
 [author]
+  name = "Artem Blagov"
+  homepage = "https://github.com/vetcher/"
+
+[original]
   name = "Alex Shpak"
   homepage = "https://github.com/alex-shpak/"
+  repo = "https://github.com/alex-shpak/hugo-book"
