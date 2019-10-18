@@ -7,7 +7,7 @@
 
 <!-- Theme stylesheet, you can customize scss by creating `assets/custom.scss` in your website -->
 {{- $styles := resources.Get "book.scss" | resources.ExecuteAsTemplate "book.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-{{ .Scratch.Set "styles-link" $styles.RelPermalink }}
+{{ .Scratch.Set "styles-link" $styles.Permalink }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
 {{- $searchJS := resources.Get "search.js" | resources.ExecuteAsTemplate "search.js" . | resources.Minify | resources.Fingerprint }}
