@@ -7,6 +7,7 @@
 
 <!-- Theme stylesheet, you can customize scss by creating `assets/custom.scss` in your website -->
 {{- $styles := resources.Get "book.scss" | resources.ExecuteAsTemplate "book.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+{{ .Scratch.Set "styles-link" $styles.RelPermalink }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
 
 {{- $searchJS := resources.Get "search.js" | resources.ExecuteAsTemplate "search.js" . | resources.Minify | resources.Fingerprint }}
@@ -22,11 +23,14 @@ Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 {{ "-->" | safeHTML }}
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css">
 
 {{- $vizJS := resources.Get "viz.js" | resources.ExecuteAsTemplate "viz.js" . | resources.Minify | resources.Fingerprint }}
 <script src="{{ $vizJS.RelPermalink }}" integrity="{{ $vizJS.Data.Integrity }}"></script>
 
 {{- $vizRenderJS := resources.Get "viz.render.js" | resources.Minify | resources.Fingerprint }}
 <script src="{{ $vizRenderJS.RelPermalink }}" integrity="{{ $vizRenderJS.Data.Integrity }}"></script>
+
+{{- $printJS := resources.Get "print.min.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $printJS.RelPermalink }}" integrity="{{ $printJS.Data.Integrity }}"></script>

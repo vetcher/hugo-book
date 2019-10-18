@@ -53,6 +53,12 @@ img {
   vertical-align: baseline;
 }
 
+a {
+    color: $color-link;
+}
+a:visited {
+    color: $color-link;
+}
 aside nav ul {
   padding: 0;
   margin: 0;
@@ -143,6 +149,12 @@ ul.pagination {
   display: none;
 }
 
+.copy-to-clipboard {
+  float: right;
+  position: relative;
+  right: 0px;
+}
+
 .book-search {
   position: relative;
   margin: $padding-16 0;
@@ -215,7 +227,29 @@ ul.pagination {
     display: none;
   }
 }
+.link-container {
+    position: relative;
+    :hover + a {
+        color: $color-link;
+    };
+}
+.link-container a {
+    text-decoration: none;
+    position: absolute;
+    margin-top: 0;
+    top: 0;
+    line-height: 2;
+    left: -1.5em;
+    border: 0;
 
+    color: transparent;
+    :visited { color: $body-font-color; };
+    :hover { color: $color-link; };
+    :active { color: $body-font-color; };
+}
+.link-container a i {
+    font-size: 20px;
+}
 .book-footer {
   display: flex;
   padding-top: $padding-16;
@@ -293,4 +327,52 @@ aside nav,
   .book-toc nav {
     padding: $padding-16 * 2 $padding-16;
   }
+}
+
+.copy-code-button {
+    position:absolute;
+    right: 0px;
+    z-index: 10;
+
+    outline: none;
+    cursor: pointer;
+    border-color: transparent;
+    background: none;
+    transition: .25s;
+    border-radius: 3px;
+
+    &:hover {
+        cursor: pointer;
+        border-color: inherit;
+    }
+    i {
+        font-size: 18px;
+        vertical-align: middle;
+    }
+}
+
+.highlight pre {
+    /* Avoid pushing up the copy buttons. */
+    margin: 0;
+}
+
+#printJS-button {
+    /* right-align */
+    position:absolute;
+    right: 10px;
+    z-index: 10;
+
+    outline: none;
+    cursor: pointer;
+    border-color: transparent;
+    background: none;
+    transition: .25s;
+    border-radius: 3px;
+
+    i {
+        vertical-align: middle;
+    }
+    &:hover{
+        border-color: inherit;
+    }
 }

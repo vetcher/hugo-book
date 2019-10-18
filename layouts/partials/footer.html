@@ -1,21 +1,24 @@
+{{- $mainJS := resources.Get "main.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $mainJS.RelPermalink }}" integrity="{{ $mainJS.Data.Integrity }}"></script>
+
 <script type="text/javascript">
-    (function(){
+    (function () {
         var vizPrefix = "language-graphviz";
-        Array.prototype.forEach.call(document.querySelectorAll("[class^=" + vizPrefix + "]"), function(x){
+        Array.prototype.forEach.call(document.querySelectorAll("[class^=" + vizPrefix + "]"), function (x) {
             x.style.display = 'none';
             x.parentNode.style.backgroundColor = "transparent";
             var engine;
-            x.getAttribute("class").split(" ").forEach(function(cls){
+            x.getAttribute("class").split(" ").forEach(function (cls) {
                 if (cls.startsWith(vizPrefix)) {
-                    engine = cls.substr(vizPrefix.length+1);
+                    engine = cls.substr(vizPrefix.length + 1);
                     if (engine.length === 0) {
                         engine = "dot";
                     }
                 }
             });
             var viz = new Viz();
-            viz.renderSVGElement(x.innerText, {engine:engine})
-                .then(function(element) {
+            viz.renderSVGElement(x.innerText, {engine: engine})
+                .then(function (element) {
                     element.style.width = "100%";
                     x.parentNode.insertBefore(element, x);
                 });
