@@ -1,13 +1,13 @@
 {{- define "main" -}}
-<button id="printJS-button" type="button" onclick="printJS({
-        printable:'printJS-article',
-        type: 'html',
-        css: [ {{ .Scratch.Get "styles-link" }}, 'https://fonts.googleapis.com/icon?family=Material+Icons'],
-        })">
-    <i class="material-icons">print</i>
-</button>
-<article class="markdown" id="printJS-article">
-    <h1>{{ .Title }}</h1>
-    {{- .Content -}}
-</article>
+    <button id="printJS-button" type="button" title="Print page content" onclick="printJS({
+            printable:'printJS-article',
+            type: 'html',
+            css: [ {{ .Scratch.Get "styles-link" }}, 'https://fonts.googleapis.com/icon?family=Material+Icons'],
+            })">
+        <i class="material-icons">print</i>
+    </button>
+    <article class="markdown" id="printJS-article">
+        <h1>{{ .Title }}</h1>
+        {{- .Content -}}
+    </article>
 {{- end -}}

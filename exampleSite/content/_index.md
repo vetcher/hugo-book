@@ -2,7 +2,130 @@
 title: Introduction
 ---
 
-# Acerbo datus maxime
+# Description
+
+* Based on [hugo-book](https://github.com/alex-shpak/hugo-book)
+* Markdown
+* Menu over file tree
+* Content search
+* Table of content
+* Print content button
+* Copy to clipboard code snippets and [Fira Code](https://github.com/tonsky/FiraCode) font.
+* Graphs, katex, expand/collapse, columns, tabs.
+
+# Markdown
+
+### Text
+It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](http://google.com)
+
+Also, below you can see splitter:
+
+---
+
+### List
+
+Sometimes you want numbered lists:
+
+1. One
+2. Two
+3. Three
+
+Sometimes you want bullet points:
+
+* Start a line with a star
+* Profit!
+
+Alternatively,
+
+- Dashes work just as well
+- And if you have sub points, put two spaces before the dash or star:
+  - Like this
+  - And this
+
+If you include a task list in the first comment of an Issue, you will get a handy progress indicator in your issue list. It also works in Pull Requests!
+
+- [x]  **formatting**, [links](#list), and <del>tags</del> supported
+- [x] list syntax required (any unordered or ordered list supported)
+- [x] this is a complete item
+- [ ] this is an incomplete item
+
+### Image
+If you want to embed images, this is how you do it:
+
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+
+### Headers
+
+# H1
+## H2
+### H3
+H3, H4, H5 and H6 is not available in table of content! But you still can share links.
+#### H4
+##### H5
+###### H6
+
+### quote
+If you'd like to quote someone, use the > character before the line:
+
+> Coffee. The finest organic suspension ever devised... I beat the Borg with it.  
+> - Captain Janeway
+
+### Code
+
+This is `inline` code.
+
+Code blocks.
+There is also `copy to clipboard` button. It copies all content of code snippet to clipboard.
+
+    public class MineSweeper
+    {	private int[][] myTruth;
+        private boolean[][] myShow;
+        
+        public void cellPicked(int row, int col)
+        {	if( inBounds(row, col) && !myShow[row][col] )
+            {	myShow[row][col] = true;
+            
+                if( myTruth[row][col] == 0)
+                {	for(int r = -1; r <= 1; r++)
+                        for(int c = -1; c <= 1; c++)
+                            cellPicked(row + r, col + c);
+                }	
+            }
+        }
+        
+        public boolean inBounds(int row, int col)
+        {	return 0 <= row && row < myTruth.length && 0 <= col && col < myTruth[0].length;
+        }
+    }
+    
+Block with language highlighting:
+
+```java
+public class MineSweeper
+{	private int[][] myTruth;
+	private boolean[][] myShow;
+	
+	public void cellPicked(int row, int col)
+	{	if( inBounds(row, col) && !myShow[row][col] )
+		{	myShow[row][col] = true;
+		
+			if( myTruth[row][col] == 0)
+			{	for(int r = -1; r <= 1; r++)
+					for(int c = -1; c <= 1; c++)
+						cellPicked(row + r, col + c);
+			}	
+		}
+	}
+	
+	public boolean inBounds(int row, int col)
+	{	return 0 <= row && row < myTruth.length && 0 <= col && col < myTruth[0].length;
+	}
+}
+```
+
+# Shortcodes
+
+## Columns
 
 {{< columns >}}
 ## Astris ipse furtiva
@@ -18,62 +141,174 @@ modo arsit? Utinam rapta fiducia valuere litora _adicit cursu_, ad facies
 Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi tenebat:
 miseram excita suadent es pecudes iam. Concilio _quam_ velatus posset ait quod
 nunc! Fragosis suae dextra geruntur functus vulgata.
-{{< /columns >}}
 
----
-
-## Tempora nisi nunc
+<--->
 
 Lorem **markdownum** emicat gestu. Cannis sol pressit ducta. **Est** Idaei,
 tremens ausim se tutaeque, illi ulnis hausit, sed, lumina cutem. Quae avis
 sequens!
+{{< /columns >}}
 
-    var panel = ram_design;
-    if (backup + system) {
-        file.readPoint = network_native;
-        sidebar_engine_device(cell_tftp_raster,
-                dual_login_paper.adf_vci.application_reader_design(
-                graphicsNvramCdma, lpi_footer_snmp, integer_model));
-    }
-    public_keyboard_docking += error.controller_gibibyte_plug.ip(4,
-            asciiPetaflops, software(supercomputer_compatible_status + 4));
-    dynamic_disk.indexModeLaptop = bufferTftpReality;
-    var export_vlog_sequence = trinitron_flowchart + supercomputer_cluster_rj(
-            -1, toolbar_powerpoint_query, -2 / multiprocessing_impression);
+## Buttons
 
-## Locis suis novi cum suoque decidit eadem
+{{< button relref="/" >}}Get Home{{< /button >}}
+{{< button href="https://google.com" >}}Google{{< /button >}}
 
-Idmoniae ripis, at aves, ali missa adest, ut _et autem_, et ab? Venit spes
-versus finis sermonibus patefecit murum nec est sine oculis. _Ille_ inmota
-macies domoque caelestia cadit tantummodo scelus procul, corde!
+## Expand
 
-1. Dolentem capi parte rostro alvum habentem pudor
-2. Fulgentia sanguine paret
-3. E punior consurgit lentus
-4. Vox hasta eras micantes
+{{< expand >}}
+### Markdown content
+Lorem markdownum insigne...
+{{< /expand >}}
 
-## Facibus pharetrae indetonsusque indulsit sic incurrite foliis
+## Hints
 
-Nefandam et prisci palmas! Blandita cutis flectitur montis macies, te _nati_
-Latiis; turbaque inferias. Virginis tibi peracta avidusque facies caper nec, e
-at ademptae, mira.
+{{< hint info >}}
+**Markdown content**  
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
+stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+{{< /hint >}}
 
-    direct *= font(inputScareware(sliHome), crossplatform.byte(
-            ppl_encryption.excel_e_rte(integratedModelModifier), timeVirtual,
-            floating_speakers.media_printer(us, yahoo, primaryPhp)));
-    friendly_metal_flatbed(cd, isoPrimaryStorage(reader), dmaMirrored);
-    if (parse_flash_cron.metalGif(1, adServiceDevice, utility)) {
-        adf -= operation_cdma_samba;
-        imapGif.switch += torrent;
-    } else {
-        pmu.disk_captcha = digital_ppp_pci + recursionTransistor(5, dram);
-        ajax_service += grayscalePythonLock;
-        google_scroll_capacity = ftp + engine_dslam_sidebar / tape - 1;
-    }
-    drive_rw = zipTftp;
-    var suffix = software_router_extension.dimm_ddr(-5,
-            kernel_digital_minisite);
+{{< hint warning >}}
+**Markdown content**  
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
+stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+{{< /hint >}}
 
-Vocavit toto; alas **mitis** maestus in liquidarum ab legi finitimosque dominam
-tibi subitus; Orionis vertitur nota. Currere alti etiam seroque cernitis
-innumeris miraturus amplectique collo sustinet quemque! Litora ante turba?
+{{< hint danger >}}
+**Markdown content**  
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
+stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+{{< /hint >}}
+
+## Graphviz
+
+You can drow graphs via graphviz or mermaid.
+
+{{< columns >}}
+### Graphviz
+
+```graphviz
+/* courtesy Ian Darwin and Geoff Collyer, Softquad Inc. */
+digraph unix {
+	size="6,6";
+	node [color=lightblue2, style=filled];
+	"5th Edition" -> "6th Edition";
+	"5th Edition" -> "PWB 1.0";
+	"6th Edition" -> "LSX";
+	"6th Edition" -> "1 BSD";
+	"6th Edition" -> "Mini Unix";
+	"6th Edition" -> "Wollongong";
+	"6th Edition" -> "Interdata";
+	"Interdata" -> "Unix/TS 3.0";
+	"Interdata" -> "PWB 2.0";
+	"Interdata" -> "7th Edition";
+	"7th Edition" -> "8th Edition";
+	"7th Edition" -> "32V";
+	"7th Edition" -> "V7M";
+	"7th Edition" -> "Ultrix-11";
+	"7th Edition" -> "Xenix";
+	"7th Edition" -> "UniPlus+";
+	"V7M" -> "Ultrix-11";
+	"8th Edition" -> "9th Edition";
+	"1 BSD" -> "2 BSD";
+	"2 BSD" -> "2.8 BSD";
+	"2.8 BSD" -> "Ultrix-11";
+	"2.8 BSD" -> "2.9 BSD";
+	"32V" -> "3 BSD";
+	"3 BSD" -> "4 BSD";
+	"4 BSD" -> "4.1 BSD";
+	"4.1 BSD" -> "4.2 BSD";
+	"4.1 BSD" -> "2.8 BSD";
+	"4.1 BSD" -> "8th Edition";
+	"4.2 BSD" -> "4.3 BSD";
+	"4.2 BSD" -> "Ultrix-32";
+	"PWB 1.0" -> "PWB 1.2";
+	"PWB 1.0" -> "USG 1.0";
+	"PWB 1.2" -> "PWB 2.0";
+	"USG 1.0" -> "CB Unix 1";
+	"USG 1.0" -> "USG 2.0";
+	"CB Unix 1" -> "CB Unix 2";
+	"CB Unix 2" -> "CB Unix 3";
+	"CB Unix 3" -> "Unix/TS++";
+	"CB Unix 3" -> "PDP-11 Sys V";
+	"USG 2.0" -> "USG 3.0";
+	"USG 3.0" -> "Unix/TS 3.0";
+	"PWB 2.0" -> "Unix/TS 3.0";
+	"Unix/TS 1.0" -> "Unix/TS 3.0";
+	"Unix/TS 3.0" -> "TS 4.0";
+	"Unix/TS++" -> "TS 4.0";
+	"CB Unix 3" -> "TS 4.0";
+	"TS 4.0" -> "System V.0";
+	"System V.0" -> "System V.2";
+	"System V.2" -> "System V.3";
+}
+
+```
+<--->
+
+### Mermaid
+
+{{< mermaid >}}
+sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you?
+    alt is sick
+        Bob->>Alice: Not so good :(
+    else is well
+        Bob->>Alice: Feeling fresh like a daisy
+    end
+    opt Extra response
+        Bob->>Alice: Thanks for asking
+    end
+{{< /mermaid >}}
+
+{{< /columns >}}
+
+## Tabs
+
+
+{{< tabs "uniqueid" >}}
+{{< tab "MacOS" >}}
+### MacOS
+
+This is tab **MacOS** content.
+
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
+stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+protulit, sed sed aere valvis inhaesuro Pallas animam: qui _quid_, ignes.
+Miseratus fonte Ditis conubia.
+{{< /tab >}}
+
+{{< tab "Linux" >}}
+
+### Linux
+
+This is tab **Linux** content.
+
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
+stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+protulit, sed sed aere valvis inhaesuro Pallas animam: qui _quid_, ignes.
+Miseratus fonte Ditis conubia.
+{{< /tab >}}
+
+{{< tab "Windows" >}}
+
+### Windows
+
+This is tab **Windows** content.
+
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
+stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+protulit, sed sed aere valvis inhaesuro Pallas animam: qui _quid_, ignes.
+Miseratus fonte Ditis conubia.
+{{< /tab >}}
+{{< /tabs >}}
+
+## Katex
+
+{{< katex >}}
+x = \begin{cases}
+   a &\text{if } b \\
+   c &\text{if } d
+\end{cases}
+{{< /katex >}}
