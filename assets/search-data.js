@@ -4,7 +4,7 @@
       {{- if $index -}},{{- end }}
       {
         "idx": {{ $index }},
-        "href": "{{ $page.RelPermalink }}",
+        "href": "{{ $page.Permalink }}",
         "title": {{ (partial "title" $page) | jsonify }},
         "content": {{ $page.Plain | jsonify }}
       }

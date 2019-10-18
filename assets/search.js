@@ -12,7 +12,7 @@
     input.required = true;
 
     loadScript("{{ "lunr.min.js" | relURL }}");
-    loadScript("{{ $searchData.RelPermalink }}", function() {
+    loadScript("{{ $searchData.Permalink }}", function() {
       input.required = false;
       search();
     });

@@ -1,11 +1,23 @@
-# Hugo Book Theme
+# Hugo DocBook Theme
+
+This theme mainly based on [original book theme](https://github.com/alex-shpak/hugo-book).  
+Original theme is cool, but does not fit my requirements.
+
+Differences:
+
+* Use all file system as pages (not only `/docs` and `/posts`)
+* Use more space for content
+* Print current page content button (or save as PDF)
+* [Fira Code](https://github.com/tonsky/FiraCode) font in code snippets
+* Copy to clipboard code snippets
+* Graphviz graphs support
 
 [![Hugo](https://img.shields.io/badge/hugo-0.55-blue.svg)](https://gohugo.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ### [Hugo](https://gohugo.io) documentation theme as simple as plain book
 
-![Screenshot](https://github.com/alex-shpak/hugo-book/blob/master/images/screenshot.png)
+![Screenshot](https://github.com/vetcher/hugo-book/blob/master/images/screenshot.png)
 
 - [Features](#features)
 - [Requirements](#requirements)
