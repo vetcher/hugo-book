@@ -1,4 +1,5 @@
 {{- $searchData := resources.Get "search-data.js" | resources.ExecuteAsTemplate "search-data.js" . | resources.Minify | resources.Fingerprint }}
+{{- $lunr := resources.Get "lunr.min.js" -}}
 
 (function() {
   const input = document.querySelector("#book-search-input");
@@ -11,7 +12,7 @@
     input.removeEventListener("focus", init); //init once
     input.required = true;
 
-    loadScript("{{ "lunr.min.js" | relURL }}");
+    loadScript("{{ $lunr.Permalink }}");
     loadScript("{{ $searchData.Permalink }}", function() {
       input.required = false;
       search();

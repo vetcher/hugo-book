@@ -216,7 +216,7 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
 stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
 {{< /hint >}}
 
-## Graphviz
+## Graphs
 
 You can draw graphs via graphviz or mermaid.
 
