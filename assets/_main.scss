@@ -116,9 +116,25 @@ ul.pagination {
     padding: $padding-16;
 
     @include fixed;
+
+    i {
+        font-size: $font-size-14;
+        float: left;
+        margin-right: 0.1rem;
+        margin-top: 0.05rem;
+    }
   }
 
   @include dark-links;
+}
+
+#icon-head {
+    float: left;
+    font-size: 2em;
+}
+
+#title {
+    margin-top: 0;
 }
 
 .book-section-flat {
@@ -231,6 +247,7 @@ ul.pagination {
     position: relative;
     :hover + a {
         color: $color-link;
+        transition: 0.25s;
     };
 }
 .link-container a {
@@ -241,6 +258,7 @@ ul.pagination {
     line-height: 2;
     left: -1.5em;
     border: 0;
+    transition: 0.25s;
 
     color: transparent;
     :visited { color: $body-font-color; };

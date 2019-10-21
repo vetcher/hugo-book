@@ -7,7 +7,19 @@
         <i class="material-icons">print</i>
     </button>
     <article class="markdown" id="main-article">
-        <h1>{{ .Title }}</h1>
+        {{- $title := partial "title" . -}}
+        {{ if or $title .Description }}
+            {{ if $title }}
+                {{ if .Params.icon }}
+                    <i id="icon-head" class="material-icons">{{ .Params.icon }}</i>
+                {{end}}
+                <h1 id="title">{{ $title }}</h1>
+            {{end}}
+            {{if .Params.description }}
+                {{ .Params.description | markdownify }}
+            {{end}}
+            <hr/>
+        {{end}}
         {{- .Content -}}
     </article>
 {{- end -}}

@@ -1,3 +1,6 @@
+---
+icon: share
+---
 # Graphviz
 
 Use code block with language `graphviz` to render dot graphs.

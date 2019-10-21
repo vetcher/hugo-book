@@ -1,5 +1,7 @@
 ---
 title: Introduction
+description: "*This is description block of page*"
+icon: accessibility_new
 ---
 
 # Description
@@ -48,6 +50,17 @@ If you include a task list in the first comment of an Issue, you will get a hand
 - [x] list syntax required (any unordered or ordered list supported)
 - [x] this is a complete item
 - [ ] this is an incomplete item
+
+### Table
+
+|   | a | b | c | d | e |
+|---|---|---|---|---|---|
+| 1 |   | x |   |   |   |
+| 2 |   | x |   |   |   |
+| 3 |   | x |   |   |   |
+| 4 |   |   |   |   |   |
+| 5 |   |   | o | o | o |
+| 6 |   |   |   |   |   |
 
 ### Image
 If you want to embed images, this is how you do it:

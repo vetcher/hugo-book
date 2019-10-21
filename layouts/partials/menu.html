@@ -35,6 +35,9 @@
             {{ if in .Site.Params.menu_exclusion .Section }}
             {{- else -}}
                 {{- safeHTML .Params.head -}}
+                {{ if .Params.icon }}
+                    <i class="material-icons">{{ .Params.icon }}</i>
+                {{end}}
                 <li class="{{if eq .FirstSection .CurrentSection}}book-section-flat{{end}}{{ if .IsAncestor $currentNode }}parent{{ end }}{{ if eq .File.UniqueID $currentNode.File.UniqueID }} active{{ end }}{{ if .Params.alwaysopen }} parent{{ end }}"><a href="{{ .Permalink }}"{{ if eq $currentNode . }} class="active"{{ end }}>{{ safeHTML .Params.Pre }}{{partial "title" .}}{{ safeHTML .Params.Post }}</a>
                     {{- $numberOfPages := (add (len .Pages) (len .Sections)) -}}
                     {{if ne $numberOfPages 0}}
@@ -65,6 +68,9 @@
             {{- end -}}
         {{- else -}}
             {{- if not .Params.Hidden -}}
+                {{ if .Params.icon }}
+                    <i class="material-icons">{{ .Params.icon }}</i>
+                {{end}}
                 <li class="{{ if eq .File.UniqueID $currentNode.File.UniqueID }}active{{ end }}"><a href="{{ .Permalink }}" {{ if eq $currentNode . }} class="active"{{ end }}>{{ safeHTML .Params.Pre }}{{partial "title" .}}{{ safeHTML .Params.Post }}</a></li>
             {{- end -}}
         {{ end -}}
