@@ -14,13 +14,14 @@ icon: accessibility_new
 * Print content button
 * Copy to clipboard code snippets and [Fira Code](https://github.com/tonsky/FiraCode) font.
 * Graphs, katex, expand/collapse, columns, tabs.
+* [Material icons](https://material.io/resources/icons/)
 
 # Markdown
 
 ### Text
 It's very easy to make some words **bold** and other words *italic* with Markdown. You can even [link to Google!](http://google.com)
 
-Also, below you can see splitter:
+Also, you can add page splitter, just write `---` on empty line:
 
 ---
 
@@ -171,7 +172,30 @@ public class MineSweeper
 Под ним сидел, и кот учёный  
 Свои мне сказки говорил.  
 
-# Shortcodes
+# Features and shortcodes
+
+## Icons and emoji
+[Material icons](https://material.io/resources/icons/):
+Theme include handy support for material icons (via tag `<icon>`).
+
+<icon>done_all</icon><icon>delete</icon><icon>fingerprint</icon><icon>language</icon><icon>message</icon>
+```html
+<icon>done_all</icon><icon>delete</icon><icon>fingerprint</icon><icon>language</icon><icon>message</icon>
+```
+
+[Emoji](https://emoji-cheat-sheet.com):
+Just add to your config file
+
+```toml
+enableEmoji = true
+```
+
+:smile::fire::shit::nail_care::unlock::bread:
+```
+:smile::fire::shit::nail_care::unlock::bread:   
+```
+Yes, Hugo renders emoji in code block, but should not. [Here is an issue.](https://github.com/gohugoio/hugo/issues/4978)
+Honestly, all Hugo themes support emoji.
 
 ## Columns
 

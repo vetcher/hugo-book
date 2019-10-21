@@ -8,8 +8,9 @@ disableKinds = ['taxonomy', 'taxonomyTerm']
 
 # Book configuration
 disablePathToLower = true
-enableGitInfo = true
 
 # Code highlight
 pygmentsStyle = 'monokailight'
 pygmentsCodeFences = true
+
+enableEmoji = true
